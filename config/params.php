@@ -9,13 +9,17 @@ return [
         ],
     ],
 
+    'maileryio/mailery-setting' => [
+        'groups' => [],
+    ],
+
     'maileryio/mailery-menu-navbar' => [
         'items' => [
             'system' => [
                 'items' => [
-                    'setting' => [
+                    'settings' => [
                         'label' => static function () {
-                            return 'Settings';
+                            return 'System Settings';
                         },
                         'url' => static function (UrlGeneratorInterface $urlGenerator) {
                             return $urlGenerator->generate('/setting/default/index');
