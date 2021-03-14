@@ -18,6 +18,11 @@ class Setting implements SettingInterface
     private string $label;
 
     /**
+     * @var string
+     */
+    private string $description;
+
+    /**
      * @var mixed
      */
     private $value;
@@ -46,6 +51,14 @@ class Setting implements SettingInterface
     public function getLabel(): string
     {
         return $this->label;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
     }
 
     /**
@@ -81,6 +94,7 @@ class Setting implements SettingInterface
         $new = new self();
         $new->name = $config['name'];
         $new->label = $config['label'];
+        $new->description = $config['description'];
         $new->value = $config['value'] ?? null;
         $new->field = $config['field'];
         $new->rules = $config['rules'];

@@ -5,7 +5,7 @@ namespace Mailery\Setting\Model;
 use Mailery\Setting\Factory\SettingFactoryInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
-class SettingGroup extends ArrayCollection
+abstract class SettingGroup extends ArrayCollection
 {
     /**
      * @param SettingFactoryInterface $factory
@@ -22,4 +22,9 @@ class SettingGroup extends ArrayCollection
 
         parent::__construct($elements);
     }
+
+    /**
+     * @return string
+     */
+    abstract public function getLabel(): string;
 }

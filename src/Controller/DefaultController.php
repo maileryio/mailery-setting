@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Yiisoft\Yii\View\ViewRenderer;
 use Psr\Http\Message\ResponseFactoryInterface as ResponseFactory;
+use Mailery\Setting\Model\SettingGroupList;
 
 class DefaultController
 {
@@ -34,10 +35,11 @@ class DefaultController
 
     /**
      * @param Request $request
+     * @param SettingGroupList $groupList
      * @return Response
      */
-    public function index(Request $request): Response
+    public function index(SettingGroupList $groupList): Response
     {
-        ;
+        return $this->viewRenderer->render('index', compact('groupList'));
     }
 }
