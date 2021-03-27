@@ -17,12 +17,11 @@ final class RouteCollectorServiceProvider extends ServiceProvider
         $collector = $container->get(RouteCollectorInterface::class);
 
         $collector->addGroup(
-            Group::create(
-                '/setting',
-                [
-                    Route::get('/default/index', [DefaultController::class, 'index'])
-                        ->name('/setting/default/index'),
-                ]
+            Group::create('/setting')
+                ->routes(
+                    Route::get('/default/index')
+                        ->name('/setting/default/index')
+                        ->action([DefaultController::class, 'index'])
             )
         );
     }
