@@ -7,7 +7,7 @@ use Mailery\Setting\Factory\SettingFactoryInterface;
 
 return [
     SettingFactoryInterface::class => [
-        '__class' => SettingFactory::class,
+        'class' => SettingFactory::class,
         '__construct()' => [
             Setting::class,
         ],
