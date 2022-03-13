@@ -22,7 +22,7 @@ return [
                             return 'System Settings';
                         },
                         'url' => static function (UrlGeneratorInterface $urlGenerator) {
-                            return $urlGenerator->generate('/setting/default/index');
+                            return strtok($urlGenerator->generate('/setting/default/index'), '?');
                         },
                     ],
                 ],
