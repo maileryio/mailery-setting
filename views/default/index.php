@@ -7,7 +7,7 @@ use Mailery\Setting\Model\SettingGroup;
 /** @var Yiisoft\Aliases\Aliases $aliases */
 /** @var Yiisoft\Router\UrlGeneratorInterface $urlGenerator */
 /** @var Mailery\Setting\Model\SettingGroupList $groupList */
-/** @var string $csrf */
+/** @var Yiisoft\Yii\View\Csrf $csrf */
 
 $this->setTitle('System settings');
 
