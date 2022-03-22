@@ -5,7 +5,7 @@ use Mailery\Setting\Model\SettingGroup;
 
 /** @var Yiisoft\Yii\WebView $this */
 /** @var Yiisoft\Aliases\Aliases $aliases */
-/** @var Yiisoft\Router\UrlGeneratorInterface $urlGenerator */
+/** @var Yiisoft\Router\UrlGeneratorInterface $url */
 /** @var Mailery\Setting\Model\SettingGroupList $groupList */
 /** @var Yiisoft\Yii\View\Csrf $csrf */
 
