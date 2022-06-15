@@ -9,10 +9,11 @@ use Yiisoft\Injector\Injector;
 
 class SettingFactory implements SettingFactoryInterface
 {
+
     /**
      * @var string
      */
-    private string $class;
+    private string $settingClass;
 
     /**
      * @var Injector
@@ -20,20 +21,20 @@ class SettingFactory implements SettingFactoryInterface
     private Injector $injector;
 
     /**
-     * @param string $class
+     * @param string $settingClass
      * @throws InvalidArgumentException
      */
-    public function __construct(string $class, Injector $injector)
+    public function __construct(string $settingClass, Injector $injector)
     {
-        if (!is_subclass_of($class, SettingInterface::class)) {
+        if (!is_subclass_of($settingClass, SettingInterface::class)) {
             throw new InvalidArgumentException(sprintf(
                 'Class "%s" does not implement "%s".',
-                $class,
+                $settingClass,
                 SettingInterface::class,
             ));
         }
 
-        $this->class = $class;
+        $this->settingClass = $settingClass;
         $this->injector = $injector;
     }
 
@@ -43,7 +44,7 @@ class SettingFactory implements SettingFactoryInterface
      */
     public function create(array $config): SettingInterface
     {
-        return $this->class::fromArray(
+        return $this->settingClass::fromArray(
             array_map(
                 function ($value) {
                     if (is_callable($value)) {
@@ -55,4 +56,5 @@ class SettingFactory implements SettingFactoryInterface
             )
         );
     }
+
 }

@@ -15,7 +15,12 @@ return [
 
     SettingGroupList::class => [
         '__construct()' => [
-            'elements' => $params['maileryio/mailery-setting']['groups'],
+            'elements' => array_filter(array_map(
+                function (array $group) {
+                    return $group['reference'] ?? null;
+                },
+                $params['maileryio/mailery-setting']['groups']
+            )),
         ],
     ],
 ];

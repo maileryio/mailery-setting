@@ -7,13 +7,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 abstract class SettingGroup extends ArrayCollection
 {
+
     /**
      * @param SettingFactoryInterface $factory
      * @param array $items
+     * @param int $order
      */
     public function __construct(
         SettingFactoryInterface $factory,
-        array $items
+        array $items,
+        private int $order
     ) {
         $elements = [];
         foreach ($items as $key => $item) {
@@ -27,4 +30,13 @@ abstract class SettingGroup extends ArrayCollection
      * @return string
      */
     abstract public function getLabel(): string;
+
+    /**
+     * @return int
+     */
+    public function getOrder(): int
+    {
+        return $this->order;
+    }
+
 }

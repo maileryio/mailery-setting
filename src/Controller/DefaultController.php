@@ -40,6 +40,6 @@ class DefaultController
      */
     public function index(SettingGroupList $groupList): Response
     {
-        return $this->viewRenderer->render('index', compact('groupList'));
+        return $this->viewRenderer->render('index', ['groupList' => $groupList->ordered()]);
     }
 }

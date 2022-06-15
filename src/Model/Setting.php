@@ -25,7 +25,7 @@ class Setting implements SettingInterface
     /**
      * @var mixed
      */
-    private $value;
+    private mixed $value;
 
     /**
      * @var Field
@@ -64,7 +64,7 @@ class Setting implements SettingInterface
     /**
      * @return mixed
      */
-    public function getValue()
+    public function getValue(): mixed
     {
         return $this->value;
     }

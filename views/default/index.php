@@ -39,15 +39,16 @@ $this->setTitle('System settings');
                         <b-list-group v-b-scrollspy="{element: '#setting-group-list', offset: 50}" style="position: sticky;top: 80px;">
                             <?php foreach ($groupList as $index => $group) {
                                 /** @var SettingGroup $group */
-                                ?><b-list-group-item href="#setting-group-item-<?= $index ?>"><?= $group->getLabel() ?></b-list-group-item><?php
-                            } ?>
+                                ?><b-list-group-item href="#setting-group-item-<?= $index ?>"><?= $group->getLabel() ?></b-list-group-item>
+                            <?php } ?>
                         </b-list-group>
                     </div>
+
                     <div class="col-9">
                         <div id="setting-group-list">
                             <?php foreach ($groupList as $index => $group) {
                                 /** @var SettingGroup $group */
-                                ?><h4 id="setting-group-item-1"><?= $group->getLabel() ?></h4><?php
+                                ?><h4 id="setting-group-item-<?= $index ?>"><?= $group->getLabel() ?></h4><?php
 
                                 $rows = [];
                                 foreach ($group as $setting) {
@@ -70,9 +71,9 @@ $this->setTitle('System settings');
                                             <th>Value</th>
                                         </tr>
                                     </thead>
-                                    <tbody><?= implode("\n", $rows) ?></tbody>
-                                </table><?php
-                            } ?>
+                                    <tbody><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?></tbody>
+                                </table>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
