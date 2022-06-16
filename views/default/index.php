@@ -71,7 +71,7 @@ $this->setTitle('System settings');
                                             <th>Value</th>
                                         </tr>
                                     </thead>
-                                    <tbody><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?><?= implode("\n", $rows) ?></tbody>
+                                    <tbody><?= implode("\n", $rows) ?></tbody>
                                 </table>
                             <?php } ?>
                         </div>
