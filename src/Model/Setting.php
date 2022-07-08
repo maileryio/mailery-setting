@@ -3,7 +3,7 @@
 namespace Mailery\Setting\Model;
 
 use Mailery\Setting\Model\SettingInterface;
-use Yiisoft\Form\Widget\Field;
+use Yiisoft\Form\Field\Base\InputField;
 
 class Setting implements SettingInterface
 {
@@ -28,9 +28,9 @@ class Setting implements SettingInterface
     private mixed $value;
 
     /**
-     * @var Field
+     * @var InputField
      */
-    private Field $field;
+    private InputField $field;
 
     /**
      * @var array
@@ -70,9 +70,9 @@ class Setting implements SettingInterface
     }
 
     /**
-     * @return Field
+     * @return InputField
      */
-    public function getField(): Field
+    public function getField(): InputField
     {
         return $this->field;
     }

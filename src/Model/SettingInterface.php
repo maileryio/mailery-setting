@@ -2,7 +2,7 @@
 
 namespace Mailery\Setting\Model;
 
-use Yiisoft\Form\Widget\Field;
+use Yiisoft\Form\Field\Base\InputField;
 
 interface SettingInterface
 {
@@ -22,9 +22,9 @@ interface SettingInterface
     public function getValue();
 
     /**
-     * @return Field
+     * @return InputField
      */
-    public function getField(): Field;
+    public function getField(): InputField;
 
     /**
      * @return array
