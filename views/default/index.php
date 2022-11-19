@@ -2,6 +2,7 @@
 
 use Mailery\Setting\Model\Setting;
 use Mailery\Setting\Model\SettingGroup;
+use Mailery\Web\Vue\Directive;
 
 /** @var Yiisoft\Yii\WebView $this */
 /** @var Yiisoft\Aliases\Aliases $aliases */
@@ -39,7 +40,7 @@ $this->setTitle('System settings');
                         <b-list-group v-b-scrollspy="{element: '#setting-group-list', offset: 50}" style="position: sticky;top: 80px;">
                             <?php foreach ($groupList as $index => $group) {
                                 /** @var SettingGroup $group */
-                                ?><b-list-group-item href="#setting-group-item-<?= $index ?>"><?= $group->getLabel() ?></b-list-group-item>
+                                ?><b-list-group-item href="#setting-group-item-<?= $index ?>"><?= Directive::pre($group->getLabel()) ?></b-list-group-item>
                             <?php } ?>
                         </b-list-group>
                     </div>
@@ -48,17 +49,17 @@ $this->setTitle('System settings');
                         <div id="setting-group-list">
                             <?php foreach ($groupList as $index => $group) {
                                 /** @var SettingGroup $group */
-                                ?><h4 id="setting-group-item-<?= $index ?>"><?= $group->getLabel() ?></h4><?php
+                                ?><h4 id="setting-group-item-<?= $index ?>"><?= Directive::pre($group->getLabel()) ?></h4><?php
 
                                 $rows = [];
                                 foreach ($group as $setting) {
                                     /** @var Setting $setting */
                                     $rows[] =
                                         '<tr>'
-                                            . '<td>' . $setting->getName() . '</td>'
-                                            . '<td>' . $setting->getLabel() . '</td>'
-                                            . '<td>' . $setting->getDescription() . '</td>'
-                                            . '<td>' . $setting->getValue() . '</td>'
+                                            . '<td>' . Directive::pre($setting->getName()) . '</td>'
+                                            . '<td>' . Directive::pre($setting->getLabel()) . '</td>'
+                                            . '<td>' . Directive::pre($setting->getDescription()) . '</td>'
+                                            . '<td>' . Directive::pre($setting->getValue()) . '</td>'
                                         . '</tr>';
                                 }
 
